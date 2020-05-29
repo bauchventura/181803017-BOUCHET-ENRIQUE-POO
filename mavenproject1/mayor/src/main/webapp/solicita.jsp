@@ -1,7 +1,7 @@
 <%-- 
     Document   : solicita
     Created on : 27 may 2020, 8:27:22
-    Author     : Marelyn
+    Author     : Bauch
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
