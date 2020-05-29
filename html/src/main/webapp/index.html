@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Start Page</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <h1>Hyper Text Markup Language</h1><br>
+	H: HYPER	: HIPER
+	T: TEXT		: TEXTO
+	M: MARKUP	: MARCA
+	L: LENGUAGE	: LENGUAJE
+	<h1>Lenguaje de Marcas de Hipertexto</h1><br>
+        
+        <h1>Las etiquetas se tienen que cerrar de acuerdo a como se abren:</h1><br>
+	Ejemplo: <h2></h2>
+        <h1>Los nombres de las etiquetas y atributos siempre se escriben en minúsculas:</h1><br> 
+	
+        <h1>Párrafos en HTML</h1><br>
+        En un documento HTML, para escribir un párrafo se usa el elemento "p", cuyas etiquetas de inicio y fin son, respectivamente: <p> y </p>.
+        
+        <h1>Etiquetas HTML para poner texto en una web</h1><br>
+        <strong> Texto de mayor importancia</strong>
+        <b> texto en negrita</b>
+        <em> texto en cursiva </em>
+        <h1> títulos y encabezados</h1>
+        <big> texto más grande</big>
+        <small> Lo contrarío de la etiqueta big</small>
+        <sub> subíndice</sub>
+        <sup> superíndice </sup>
+        
+        <h1>Imágenes en HTML</h1><br>
+        <p>Por ejemplo, si tu imagen se llama bauch.jpg, y está en el mismo directorio que tu página HTML, deberás incrustar la imagen de la siguiente manera:</p>
+        <img src="bauch.jpg">
+        
+        <h1>Hipervínculos en HTML</h1><br>
+        <p>Para insertar un enlace, la etiqueta que vamos a usar es muy fácil de recordar: <a>. Sin embargo, necesita un atributo, href, que indica la página a la que debería llevar el enlace</p>
+        Ejemplo: <a href="http://www.google.com">Google</a>
+
+        <h1>Tablas en HTML</h1><br>
+        <p>Las tablas más sencillas de HTML se definen con tres etiquetas: <table> para crear la tabla, <tr> para crear cada fila y <td> para crear cada columna</p>
+        Ejemplo: <table>
+        <tr>
+            <td><strong>Matrícula</strong></td>
+            <td><strong>Nombre</strong></td>
+            <td><strong>Carrera</strong></td>
+        </tr>
+        <tr>
+            <td>181803017</td>
+            <td>Enrique</td>
+            <td>Tecnologías de la Información</td>
+        </tr>
+        </table>
+
+        <h1>Listas en HTML</h1><br>
+        <p>Las listas no ordenadas van dentro de la etiqueta < ul> HTML y de su cierre < /ul>. Cada punto que queramos añadir a la lista, lo haremos dentro de la etiqueta < li> y su cierre.
+                Así podemos hacer que la lista esté definida por puntos negros (li type=”disc”), por puntos con el fondo blanco (li type=”circle”) o por cuadrados (li type=”square”). Aunque esta apariencia dependerá del navegador. Hay algunos navegadores que dan otras apariencias a estos mismos atributos.</p>
+                Ejemplo: <ul>
+                    <li type="circle">Esto es un tipo de punto</li>
+                    <li type="square">Este es otro</li>
+                    <li type="disc">Y este es otro diferente</li>
+                </ul>
+
+                <p>Las listas ordenadas van enmarcadas dentro de las etiquetas < ol> < /ol>. Cada punto de la lista se escribe con la misma etiqueta que en las no numeradas: <li>. Pero al ser listas ordenadas los símbolos serán números y éstos se irán generando automáticamente por orden, conforme escribamos nuevos puntos.</p>
+                <p>En las listas ordenadas podemos hacer que el primer punto comience con el número que nosotros queramos. Lo conseguiremos gracias al atributo “value”. Los siguientes puntos que escribamos se generarán automáticamente por orden, partiendo de ese número.</p>
+                Ejemplo: <ol>
+                    <li value="20">Este será el número 20. </li>
+                    <li>Este será el 21. </li>
+                    <li> Este será el 22. Y así sucesivamente. </li>
+                </ol>
+
+                <p>Si lo que vamos a hacer es un listado de definiciones, podemos usar las etiquetas "< dl>, < dt> y < dd>". Vamos a explicarlas por partes:
+                        La etiqueta < dl > viene de los términos ingleses “Definiton list” y nos indica que dentro de ella, entre ella y su cierre, va a ir una definición.</p>
+                            <p>La etiqueta "< dt>" viene de los términos “Definition term” y dentro de ella irá el término que vamos a definir. Para entendernos mejor, dentro de <dt> iría el título de la definición.</p>
+                                <p>La etiqueta "< dd>" viene de los términos “Definition description” y nos dice que dentro de ésta irá la definición.</p>
+                                Ejemplo: 
+                                <dl>
+                                    <dt>Aquí va el término que definiremos</dt>
+                                    <dd>Y aquí dentro irá la definición propiamente dicha.</dd>
+                                </dl>
+                                <dl>
+                                    <dt>Aquí va la segunda definición</dt>
+                                    <dd>Y aquí dentro irá la segunda definición, separada automáticamente de la anterior.</dd>
+                                </dl>
+                                <h1>Bloques en HTML</h1><br>
+
+                                <p>Las etiquetas de bloque permiten definir bloques de contenido coherente, formado por texto e imágenes. Visualmente, cada bloque se muestra separado del resto de bloques. El bloque de contenido más simple es el párrafo (etiqueta <p>).</p>
+                                <p>La etiqueta vacía <hr> está pensada para separar párrafos e indica un cambio de tema. Tradicionalmente, los navegadores han mostrado este separador como una línea horizontal.</p>
+
+                                Ejemplo: 
+                                <p>Quien tiene un amigo tiene un tesoro.</p>
+                                <p>Amigo en la adversidad, es amigo de verdad.</p>
+                                <hr>
+                                <p>Cuando marzo mayea, mayo marcea.</p>
+                                <p>La primavera la sangre altera.</p>
+                                <p>La etiqueta < pre> se utiliza cuando se quiere conservar los espacios en blanco, los saltos de línea y los tabuladores del texto original. En el resto de etiquetas, los navegadores no muestran ni las líneas en blanco ni varios espacios en blanco seguidos.</p>
+
+                                <p>Un bloque preformateado < pre> se muestra con la familia de fuente monospace (normalmente, el tipo de letra es Courier).</p>
+                                Ejemplo:
+                                <pre>País    Continente  Población (2013)
+España    Europa         47 millones
+India      Asia        1250 millones</pre>
+                                <p>La etiqueta < blockquote> está pensada para identificar una cita larga, que puede contener varios párrafos u otras etiquetas.</p>
+
+                                <p>Los navegadores suelen mostrar la etiqueta <blockquote> con márgenes a izquierda y derecha.</p>
+                                    Ejemplo:
+                                    <blockquote>
+                                        <p>Antiguamente eran las universidades independientes entre sí, y hasta del Gobierno mismo: cada cual tenía su régimen, sus estudios, sus métodos y aun sus pretensiones distintas: no sólo disponían arbitrariamente de sus fondos, sino que hasta era también arbitraria en ellas la enseñanza. Ya desde fines del siglo pasado trató el Gobierno de poner diques a semejante anarquía, que, tras del desconcierto general de todas las ciencias, mantenia a éstas en atraso lastimoso, perpetuando rancias ideas, doctrinas desacreditadas y perjudiciales preocupaciones.</p>
+                                        </bloxkquote>
+
+                                        <h1>Formularios en HTML</h1><br>
+                                        <p>Los formularios web son uno de los principales puntos de interacción entre un usuario y un sitio web o aplicación. Los formularios permiten a los usuarios la introducción de datos, que generalmente se envían a un servidor web para su procesamiento y almacenamiento (consulta Enviar los datos de un formulario más adelante en el módulo), o se usan en el lado del cliente para provocar de alguna manera una actualización inmediata de la interfaz (por ejemplo, se añade otro elemento a una lista, o se muestra u oculta una función de interfaz de usuario).</p>
+                                        Ejemplo: 
+                                        <form>
+
+                                        </form>
+
+                                        <h1>Elementos de un Formulario en HTML</h1><br>
+                                        <ul>
+                                            <li type="circle">label</li>
+                                            <li type="square">input</li>
+                                            <li type="disc">textarea</li>
+                                        </ul>
+
+                                        <h1>El label</h1><br>
+                                        <p>El Elemento HTML < label> representa una etiqueta para un elemento en una interfaz de usuario. Este puede estar asociado con un control ya sea mediante la utilizacion del atributo for, o ubicando el control dentro del elemento label. Tal control es llamado "el control etiquetado" del elemento label.</p>
+                                        Ejemplo:
+                                        <label for="Name">Click me</label>
+
+                                        <h1>El input</h1><br>
+                                        <p>El elemento HTML <input> se usa para crear controles interactivos para formularios basados en la web, que reciban datos del usuario. La forma en que <input> funciona varía considerablemente dependiendo del valor de su atributo type.</p>
+                                        Ejemplo:
+                                        <form>
+                                            <input type=”text” name=”nom” />
+                                        </form>
+
+                                        <h1>Tipos input “type”</h1><br>
+                                        <p>El tipo de control a mostrar. Su valor predeterminado es text, si no se especifica este atributo. Los posibles valores son:</p>
+                                        “button”: Botón sin un comportamiento específico.<br>
+                                        “checkbox”: Casilla de selección.<br>
+                                        “color”: HTML5 Control para espicificar un color.<br>
+                                        “date”: HTML5 Control para introducir una fecha (año, mes y día, sin tiempo).<br>
+                                        “datetime-local”: HTML5 Control para introducir fecha y hora, sin zona horaria específica.<br>
+                                        “email”: HTML5 Campo para introducir una dirección de correo electrónico.<br>
+                                        “file”: Control que permite al usuario seleccionar un archivo.<br>
+                                        “hidden”: Control que no es mostrado en pantalla, pero cuyo valor es enviado al servidor.<br>
+                                        “image”: Botón de envío de formulario con gráfico.<br>
+                                        “month”: HTML5 Control para introducir un mes y año, sin zona horaria específica.<br>
+                                        “number”: HTML5 Control para introducir un número de punto flotante.<br>
+                                        “password”: Control de línea simple cuyo valor permanece oculto.<br>
+                                        “radio”: Botón radio.<br>
+                                        “range”: HTML5 Control para introducir un número cuyo valor exacto no es importante.<br>
+                                        “reset”: Botón que restaura los contenidos de un formulario a sus valores predeterminados.<br>
+                                        “search”: HTML5 Cuadro de texto de línea simple para introducir textos de búsqueda.<br>
+                                        “submit”: Botón que envía el formulario.<br>
+                                        “text”: Campo de texto de línea simple.<br>
+                                        “time”: HTML5 Control para introducir un valor de tiempo sin zona horaria específica.<br>
+                                        “url”: HTML5 Campo para editar una URL.<br>
+                                        “week”: HTML5 Control para introducir una fecha que consiste en número de semana del año y número de semana sin zona horaria específica.<br>
+
+                                        <h1>El select</h1><br>
+                                        <p> El elemento select ( < select> ) de HTML representa un control que muestra un menú de opciones. Las opciones contenidas en el menú son representadas por elementos < option> , los cuales pueden ser agrupados por elementos < optgroup>.La opcion puede estar preseleccionada por el usuario.</p>
+                                        Ejemplo:
+                                        <select name="select">
+                                            <option value="value1">Value 1</option> 
+                                            <option value="value2" selected>Value 2</option>
+                                            <option value="value3">Value 3</option>
+                                        </select>
+
+                                        <h1>El textarea</h1><br>
+                                        <p> El elemento HTML < textarea> representa un control para la edición mutilínea de texto sin formato</p>
+                                        Ejemplo:
+                                        textarea {
+                                        resize: none;
+                                        }
+
+                                        <h1>El buttom</h1><br>
+                                        <p>La propiedad bottom especifica parte de la posición de un elemento (posicionado-es decir, con una posición determinada por código)</p>Ejemplo: bottom: <length> | <percentage> | auto | inherit
+
+                                                <h1>El atributo required en el formulario.</h1><br>
+                                                <p>Con el atributo required HTML5 podemos establecer que un input de formulario sea de rellenado obligatorio.</p>
+                                                Ejemplo: <input type="text" name="nombre" required>
+
+    </body>
+</html>
