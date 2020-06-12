@@ -23,10 +23,33 @@
         while(rs.next()){
             out.println(rs.getString(1));
         }
-    }catch(CommunicationsException e){
-        out.println(e.getMessage()+": Fallo del enlace de comunicaciones<br>");
-    }catch(SQLSyntaxErrorException e){
-        out.println(e.getMessage()+": Error de Sintaxis<br>");
+    }catch(SQLException e){
+        switch(e.getErrorCode()){
+            case 0:{
+                out.println("ErrorSQL:  No Activaste el Xampp");
+                break;
+            }
+            case 1049:{
+                out.println("ErrorSQL:  No Existe la Base de Datos");
+                break;
+            }
+            case 1146 :{
+                out.println("ErrorSQL: No Existe esa Tabla");
+                break;
+            }
+            case 1045:{
+                out.println("ErrorSQL: Acceso denegado al LocalHost");
+                break;
+            }
+            case 1054:{
+                out.println("ErrorSQL: No Existe el Atríbuto");
+                break;
+            }
+            default:{
+                out.println("ErrorSQL: "+e.getMessage()+" : "+e.getErrorCode());
+                break;
+            }
+        }
     }catch(Exception e){
         out.println("Error: "+e+"<br>");
     }
