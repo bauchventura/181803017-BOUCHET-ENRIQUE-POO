@@ -4,74 +4,72 @@
     Author     : Bauch
 --%>
 
-<%@page import="java.sql.SQLSyntaxErrorException"%>
-<%@page import="com.mysql.cj.xdevapi.Statement"%>
-<%@page import="java.sql.DriverManager"%>
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.Connection"%>
+<%@page import="Data.*"%>
 <%@page import="java.util.*" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<%
-    Connection conexion = null;
-    ResultSet rs = null;
-    String bla = "FFFFFF";
-    %>
+<%CigarroDB cigarro = new CigarroDB();
+    FiltrosDB filtro = new FiltrosDB();
+    MarcasDB marca = new MarcasDB(); %>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>CRUD Cigarros</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     </head>
-    <body style="background-color:#273734">
-        <h1><font color="6FFADB">CRUD Cigarros</font></h1>
-        <table class="egt">
-            <tr>
-                <th><font color="3DFCB9">ID_Cigarro</font></th>
-                <th><font color="3DFCB9">Marca</font></th>
-                <th><font color="3DFCB9">Filtro</font></th>
-                <th><font color="3DFCB9">Precio</font></th>
-                <th><font color="3DFCB9">Cantidad</font></th>
-            </tr>
-        <%try {
-                Class.forName("com.mysql.jdbc.Driver");
-                conexion = DriverManager.getConnection("jdbc:mysql://localhost/cigarros", "root", "");
-                rs = conexion.createStatement().executeQuery("SELECT cigarro.id_cigarros,marcas.nombre,filtros.nombre,cigarro.precio,cigarro.cantidad FROM cigarro,filtros,marcas WHERE cigarro.id_marca=marcas.id_marca AND cigarro.id_filtro=filtros.id_filtro");
-                while (rs.next()) {
-                    %><tr><%
-                    out.println("<td><font color="+bla+">"+rs.getString(1)+"</font></td>");
-                    out.println("<td><font color="+bla+">"+rs.getString(2)+"</font></td>");
-                    out.println("<td><font color="+bla+">"+rs.getString(3)+"</font></td>");
-                    out.println("<td><font color="+bla+">"+rs.getString(4)+"</font></td>");
-                    out.println("<td><font color="+bla+">"+rs.getString(5)+"</font></td>");
-                    %></tr><%
-                }%>
-        </table><br>
-        <table>
-            <th><font color="3DFCB9">ID_Marca</font></th>
-            <th><font color="3DFCB9">nombre</font></th>
-            <%rs = conexion.createStatement().executeQuery("SELECT * FROM marcas");
-                while (rs.next()) {
-                    %><tr><%
-                    out.println("<td><font color="+bla+">"+rs.getString(1)+"</font></td>");
-                    out.println("<td><font color="+bla+">"+rs.getString(2)+"</font></td>");
-                    %></tr><%
-                }%>
-        </table><br>
-        <table>
-            <th><font color="3DFCB9">ID_Filtro</font></th>
-            <th><font color="3DFCB9">nombre</font></th>
-            <%rs = conexion.createStatement().executeQuery("SELECT * FROM filtros");
-                while (rs.next()) {
-                    %><tr><%
-                    out.println("<td><font color="+bla+">"+rs.getString(1)+"</font></td>");
-                    out.println("<td><font color="+bla+">"+rs.getString(2)+"</font></td>");
-                    %></tr><%
-                }%>
-        </table>
-        <%
-            } catch (Exception e) {
-                out.println("Error: " + e.getMessage());
-            }%>
+    <body style="background: #191927">
+        <h1 class="text-center"><font color="FFFFFF">Cigarros</font></h1>
+        <div class="container-fluid">
+            <div class="row">
+                <nav class="col-md-2 d-none d-md-block sidebar border-right" style="background: #191927">
+                    <div class="sidebar-sticky">
+                        <ul class="nav flex-column sidebar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="catalogoFiltro.jsp"><font color="FFFFFF">Filtros</font></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="catalogoMarca.jsp"><font color="FFFFFF">Marcas</font></a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+                    <div class="chartjs-size-monitor">
+                        <table class="table table-hover table-dark text-center" style="background: #222230">
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="text-center"><font color="">ID_Cigarro</font></th>
+                                    <th scope="col" class="text-center"><font color="">Filtro</font></th>
+                                    <th scope="col" class="text-center"><font color="">Marca</font></th>
+                                    <th scope="col" class="text-center"><font color="">Precio</font></th>
+                                    <th scope="col" class="text-center"><font color="">Cantidad</font></th>
+                                    <th colspan="2" scope="col"><a class="btn btn-outline-success btn-block" href="formularioCigarros.jsp">Añadir Cigarro</a></th>
+                                </tr>
+                            </thead>
+                            <%for (int i = 0; i < cigarro.listadoCigarros().size(); i++) {%>
+                            <tr>
+                                <th scope="row"><font color=""><%out.print(cigarro.listadoCigarros().get(i).getID_Cigarro());%></font></th>
+                                    <%for (int j = 0; j < filtro.listadoFiltros().size(); j++) {
+                                            if (cigarro.listadoCigarros().get(i).getID_Filtro() == filtro.listadoFiltros().get(j).getID()) {%>
+                                <td><font color=""><%out.print(filtro.listadoFiltros().get(j).getNombre());%></font></td>
+                                    <%}
+                                        }
+                                        for (int j = 0; j < marca.listadoMarcas().size(); j++) {
+                                            if (cigarro.listadoCigarros().get(i).getID_Marca() == marca.listadoMarcas().get(j).getID()) {%>
+                                <td><font color=""><%out.print(marca.listadoMarcas().get(j).getNombre());%></font></td>
+                                    <%}
+                                        }%>
+                                <td><font color="">$<%out.print(cigarro.listadoCigarros().get(i).getPrecio());%></font></td>
+                                <td><font color=""><%out.print(cigarro.listadoCigarros().get(i).getCantidad());%></font></td>
+                                <td><a class="btn btn-outline-warning btn-block" href="formularioCigarros.jsp?id=<%out.print(cigarro.listadoCigarros().get(i).getID_Cigarro());%>">Editar</a></td>
+                                <td><a class="btn btn-outline-danger btn-block" href="eliminarCigarro.jsp?id=<%out.print(cigarro.listadoCigarros().get(i).getID_Cigarro());%>">Eliminar</a></td>
+                            </tr>
+                            <%}%>
+                        </table>
+                    </div>
+                </main>
+            </div>
+        </div>
     </body>
 </html>
